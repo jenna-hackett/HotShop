@@ -11,7 +11,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          tabBarIcon: () => <AntDesign name="home" size={24} color="black" />,
+          tabBarIcon: () => <AntDesign name="home" size={24} color="gray" />,
         }}
       />
 
@@ -19,7 +19,7 @@ export default function TabLayout() {
         name="schedule"
         options={{
           tabBarIcon: () => (
-            <MaterialIcons name="calendar-month" size={24} color="black" />
+            <MaterialIcons name="calendar-month" size={24} color="gray" />
           ),
         }}
       />
@@ -28,7 +28,7 @@ export default function TabLayout() {
         name="membership"
         options={{
           tabBarIcon: () => (
-            <Ionicons name="bag-outline" size={24} color="black" />
+            <Ionicons name="bag-outline" size={24} color="gray" />
           ),
         }}
       />
@@ -40,7 +40,7 @@ export default function TabLayout() {
             <MaterialCommunityIcons
               name="account-circle-outline"
               size={24}
-              color="black"
+              color="gray"
             />
           ),
         }}
