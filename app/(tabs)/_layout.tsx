@@ -7,19 +7,27 @@ import { Tabs } from "expo-router";
 
 export default function TabLayout() {
   return (
-    <Tabs screenOptions={{ tabBarShowLabel: false }}>
+    <Tabs
+      screenOptions={{
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: "black",
+        tabBarInactiveTintColor: "gray",
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          tabBarIcon: () => <AntDesign name="home" size={24} color="gray" />,
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="home" size={24} color={color} />
+          ),
         }}
       />
 
       <Tabs.Screen
         name="schedule"
         options={{
-          tabBarIcon: () => (
-            <MaterialIcons name="calendar-month" size={24} color="gray" />
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="calendar-month" size={24} color={color} />
           ),
         }}
       />
@@ -27,8 +35,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="membership"
         options={{
-          tabBarIcon: () => (
-            <Ionicons name="bag-outline" size={24} color="gray" />
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="bag-outline" size={24} color={color} />
           ),
         }}
       />
@@ -36,11 +44,11 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          tabBarIcon: () => (
+          tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="account-circle-outline"
               size={24}
-              color="gray"
+              color={color}
             />
           ),
         }}
