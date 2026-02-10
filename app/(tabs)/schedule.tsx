@@ -3,19 +3,24 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Membership() {
+export default function Schedule() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ backgroundColor: "#ED2D38" }}>
       <View style={styles.header}>
         <View style={styles.headerRow}>
           <View style={styles.leftGroup}>
             <Text style={styles.title}>Silverado</Text>
-            <AntDesign name="down" size={20} color="black" />
+            <AntDesign
+              name="down"
+              size={24}
+              color="black"
+              style={styles.downIcon}
+            />
           </View>
 
           <Ionicons
             name="options-outline"
-            size={24}
+            size={30}
             color="black"
             style={{ transform: [{ rotate: "180deg" }] }}
           />
@@ -58,6 +63,10 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "bold",
     color: "black",
+  },
+  downIcon: {
+    paddingTop: 6,
+    paddingLeft: 2,
   },
   dateStrip: {},
   dayTitle: {},
