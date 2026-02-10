@@ -9,7 +9,7 @@ export default function Membership() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Edit app/membership.tsx to edit this screen.</Text>
     </View>
   );
 }

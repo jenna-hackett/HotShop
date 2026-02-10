@@ -9,7 +9,7 @@ export default function Schedule() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Edit app/schedule.tsx to edit this screen.</Text>
     </View>
   );
 }
