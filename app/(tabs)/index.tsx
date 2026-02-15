@@ -1,15 +1,12 @@
 import { Text, View } from "react-native";
+import ReserveButton from "../ui/components/ReserveButton";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+    <View>
+      <Text>Welcome page</Text>
+      <ReserveButton text="Reserved" bgColor="black" textColor="white" />
+      <ReserveButton text="Reserve" bgColor="white" textColor="black" />
     </View>
   );
 }
