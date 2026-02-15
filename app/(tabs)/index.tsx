@@ -1,12 +1,12 @@
-import { Text, View } from "react-native";
-import ReserveButton from "../ui/components/ReserveButton";
+import { View } from "react-native";
+import Icon from "../ui/components/Icon";
+
+//<ReserveButton text="Reserved" bgColor="black" textColor="white" />
 
 export default function Index() {
   return (
     <View>
-      <Text>Welcome page</Text>
-      <ReserveButton text="Reserved" bgColor="black" textColor="white" />
-      <ReserveButton text="Reserve" bgColor="white" textColor="black" />
+      <Icon />
     </View>
   );
 }
