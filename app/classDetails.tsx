@@ -49,9 +49,6 @@ export default function ClassDetails() {
       </View>
       <View style={styles.cancellation}>
         <Text style={styles.bold}>Cancellation Details</Text>
-        <Text style={styles.body}>
-          All classes must be cancelled with at least 48 hours notice.
-        </Text>
       </View>
       <View style={styles.button}>
         <ReserveButton
@@ -138,6 +135,7 @@ const styles = StyleSheet.create({
     borderColor: "#EDEDED",
     borderWidth: 1,
     padding: 25,
+    marginBottom: 80,
   },
   body: {
     lineHeight: 20,
