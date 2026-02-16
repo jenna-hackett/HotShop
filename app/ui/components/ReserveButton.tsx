@@ -27,8 +27,8 @@ export default function ReserveButton({
 
 const styles = StyleSheet.create({
   button: {
-    height: 35,
-    width: 75,
+    height: 40,
+    width: 80,
     borderColor: "black",
     borderWidth: 1,
     borderRadius: 3,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   text: {
-    fontSize: 10,
+    fontSize: 12,
     fontWeight: "bold",
   },
 });

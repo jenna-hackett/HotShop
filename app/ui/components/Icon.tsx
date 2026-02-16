@@ -13,7 +13,7 @@ export default function Icon() {
 
 const styles = StyleSheet.create({
   icon: {
-    height: 50,
-    width: 50,
+    height: 55,
+    width: 55,
   },
 });
