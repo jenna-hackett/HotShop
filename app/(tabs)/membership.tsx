@@ -9,7 +9,7 @@ export default function Membership() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/membership.tsx to edit this screen.</Text>
+      <Text>Aurora page here</Text>
     </View>
   );
 }
