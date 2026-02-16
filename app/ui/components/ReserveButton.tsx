@@ -4,12 +4,14 @@ type ButtonProps = {
   text: string;
   textColor: string;
   bgColor: string;
+  width?: number;
 };
 
 export default function ReserveButton({
   text,
   textColor,
   bgColor,
+  width,
 }: ButtonProps) {
   return (
     <Pressable
@@ -18,6 +20,7 @@ export default function ReserveButton({
         {
           backgroundColor: bgColor,
         },
+        width ? { width } : null,
       ]}
     >
       <Text style={[styles.text, { color: textColor }]}>{text}</Text>
