@@ -9,7 +9,9 @@ export default function Profile() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/profile.tsx to edit this screen.</Text>
+      <Text>
+        We did not include this screen as part of our assignment scope.
+      </Text>
     </View>
   );
 }
