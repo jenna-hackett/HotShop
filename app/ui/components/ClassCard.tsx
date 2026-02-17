@@ -4,11 +4,12 @@ import ReserveButton from "./ReserveButton";
 
 type ClassProps = {
   time: string;
-  date: string;
+  date?: string;
   className: string;
   instructor: string;
   location: string;
   duration: string;
+  reserved?: boolean;
 };
 
 export default function ClassCard({
@@ -18,7 +19,12 @@ export default function ClassCard({
   instructor,
   location,
   duration,
+  reserved = true,
 }: ClassProps) {
+  const buttonText = reserved ? "Reserved" : "Reserve";
+  const bgColor = reserved ? "black" : "white";
+  const textColor = reserved ? "white" : "black";
+
   return (
     <View style={styles.container}>
       <View style={styles.timeAndIcon}>
@@ -33,7 +39,11 @@ export default function ClassCard({
         <Text style={styles.grey}>{duration}</Text>
       </View>
       <View style={styles.button}>
-        <ReserveButton text="Reserved" bgColor="black" textColor="white" />
+        <ReserveButton
+          text={buttonText}
+          bgColor={bgColor}
+          textColor={textColor}
+        />
       </View>
     </View>
   );

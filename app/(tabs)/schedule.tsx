@@ -1,8 +1,8 @@
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-// import ClassCard
+import ClassCard from "../ui/components/ClassCard";
 // import ReserveButton
 
 export default function Schedule() {
@@ -86,18 +86,48 @@ export default function Schedule() {
         <Text>Monday, February 9, 2026</Text>
       </View>
 
+      {/* INSERT CLASSCARD COMPONENT, ICON COMPONENT AND RESERVEBUTTON COMPONENT HERE */}
       <View style={styles.classList}>
-        <Text>
-          10:20 AM <Text>HotShop Spin & Fire (45/30)</Text>
-        </Text>
-        <Image
-          style={styles.hotShopIcon}
-          source={require("../../../assets/images/HotShopIcon.png")}
+        <ClassCard
+          time="10:20 AM"
+          className="HotShop Spin & Sculpt (45/30)"
+          instructor="Sammi Muys"
+          location="Silverado"
+          duration="75 min."
+          reserved={false}
         />
-        <Text>Sammi Muys</Text>
-        <Text>Silverado</Text>
-        <Text style={styles.mins}>75 min.</Text>
-        {/* INSERT RESERVE BUTTON HERE */}
+        <ClassCard
+          time="4:45 PM"
+          className="HotShop Flow"
+          instructor="Kathy Gehmlich"
+          location="Silverado"
+          duration="60 min."
+          reserved={false}
+        />
+        <ClassCard
+          time="5:25 PM"
+          className="Early 2000's Throwbacks 💿 - Spin & Sculpt"
+          instructor="Hailey Nelsen"
+          location="Silverado"
+          duration="60 min."
+          reserved={false}
+        />
+        <ClassCard
+          time="6:05 PM"
+          className="HotShop Spin & Strength Express"
+          instructor="Jillian Brophy"
+          location="Silverado"
+          duration="60 min."
+          reserved={false}
+        />
+        <ClassCard
+          time="6:35 PM"
+          className="HotShop Hips"
+          instructor="Michelle Marshall"
+          location="Silverado"
+          duration="60 min."
+          reserved={false}
+        />
       </View>
     </View>
   );
@@ -173,9 +203,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: "lightgrey",
   },
-  classList: {
-    paddingHorizontal: 15,
-  },
+  classList: {},
   hotShopIcon: {},
   mins: {},
 });
