@@ -86,7 +86,6 @@ export default function Schedule() {
         <Text>Monday, February 9, 2026</Text>
       </View>
 
-      {/* INSERT CLASSCARD COMPONENT, ICON COMPONENT AND RESERVEBUTTON COMPONENT HERE */}
       <View style={styles.classList}>
         <ClassCard
           time="10:20 AM"
@@ -106,18 +105,19 @@ export default function Schedule() {
         />
         <ClassCard
           time="5:25 PM"
-          className="Early 2000's Throwbacks 💿 - Spin & Sculpt"
+          className={"Early 2000's Throwbacks 💿 - Spin\n& Sculpt"}
           instructor="Hailey Nelsen"
           location="Silverado"
           duration="60 min."
           reserved={false}
+          titleLines={2}
         />
         <ClassCard
           time="6:05 PM"
           className="HotShop Spin & Strength Express"
           instructor="Jillian Brophy"
           location="Silverado"
-          duration="60 min."
+          duration="40 min."
           reserved={false}
         />
         <ClassCard
