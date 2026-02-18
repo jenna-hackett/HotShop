@@ -1,5 +1,6 @@
 import Entypo from "@expo/vector-icons/Entypo";
 import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import ClassCard from "../ui/components/ClassCard";
 import StatCard from "../ui/components/StatCard";
 
@@ -10,6 +11,7 @@ import StatCard from "../ui/components/StatCard";
 export default function Index() {
   return (
     <View>
+      <SafeAreaView edges={["top"]} style={{ backgroundColor: "#ED2D38" }} />
       <View style={styles.header}>
         <Text style={styles.headerText}>Welcome back, {"\n"}Jenna!</Text>
       </View>
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
     height: 280,
     justifyContent: "flex-end",
     paddingHorizontal: 30,
-    paddingBottom: 100,
+    paddingBottom: 120,
   },
   headerText: {
     fontSize: 30,
