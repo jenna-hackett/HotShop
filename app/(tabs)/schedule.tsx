@@ -1,11 +1,13 @@
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { StyleSheet, Text, View } from "react-native";
+import { useRouter } from "expo-router";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ClassCard from "../ui/components/ClassCard";
 // import ReserveButton
 
 export default function Schedule() {
+  const router = useRouter();
   return (
     <View style={{ flex: 1, backgroundColor: "#fff" }}>
       <SafeAreaView edges={["top"]} style={{ backgroundColor: "#ED2D38" }} />
@@ -95,14 +97,16 @@ export default function Schedule() {
           duration="75 min."
           reserved={false}
         />
-        <ClassCard
-          time="4:45 PM"
-          className="HotShop Flow"
-          instructor="Kathy Gehmlich"
-          location="Silverado"
-          duration="60 min."
-          reserved={false}
-        />
+        <Pressable onPress={() => router.push("/classDetails")}>
+          <ClassCard
+            time="4:45 PM"
+            className="HotShop Flow"
+            instructor="Kathy Gehmlich"
+            location="Silverado"
+            duration="60 min."
+            reserved={false}
+          />
+        </Pressable>
         <ClassCard
           time="5:25 PM"
           className={"Early 2000's Throwbacks 💿 - Spin\n& Sculpt"}
