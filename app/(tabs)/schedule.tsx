@@ -4,7 +4,6 @@ import { useRouter } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ClassCard from "../ui/components/ClassCard";
-// import ReserveButton
 
 export default function Schedule() {
   const router = useRouter();
@@ -88,7 +87,7 @@ export default function Schedule() {
         <Text>Monday, February 9, 2026</Text>
       </View>
 
-      <View style={styles.classList}>
+      <View>
         <ClassCard
           time="10:20 AM"
           className="HotShop Spin & Sculpt (45/30)"
@@ -207,7 +206,4 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: "lightgrey",
   },
-  classList: {},
-  hotShopIcon: {},
-  mins: {},
 });
