@@ -42,11 +42,8 @@ export default function ClassCard({
 
         <Text
           style={[styles.bold, styles.title]}
-          numberOfLines={titleLines}
-          ellipsizeMode={isSingleLineTitle ? "clip" : "tail"}
-          adjustsFontSizeToFit={isSingleLineTitle}
-          minimumFontScale={0.9}
-          allowFontScaling
+          numberOfLines={2}
+          ellipsizeMode="clip"
         >
           {className}
         </Text>
@@ -69,11 +66,12 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
     borderColor: "#EDEDED",
-    borderWidth: 1,
-    padding: 15,
+    borderBottomWidth: 1,
+    paddingHorizontal: 15,
+    paddingVertical: 22,
+    position: "relative",
+    minHeight: 120,
   },
   timeAndIcon: {
     flexDirection: "column",
@@ -90,8 +88,8 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   title: {
-    flexShrink: 1,
     lineHeight: 20,
+    flexWrap: "wrap",
   },
   semibold: {
     fontWeight: "400",
@@ -104,12 +102,13 @@ const styles = StyleSheet.create({
   },
   info: {
     flexDirection: "column",
-    flex: 1,
-    marginRight: 12,
+    lineHeight: 20,
+    marginRight: 90,
   },
   button: {
-    alignSelf: "center",
-    marginLeft: "auto",
-    marginTop: 35,
+    position: "absolute",
+    right: 15,
+    top: "50%",
+    marginTop: 15,
   },
 });
