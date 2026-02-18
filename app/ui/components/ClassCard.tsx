@@ -11,6 +11,7 @@ type ClassProps = {
   duration: string;
   reserved?: boolean;
   titleLines?: number;
+  onPress?: () => void;
 };
 
 export default function ClassCard({
@@ -21,13 +22,11 @@ export default function ClassCard({
   location,
   duration,
   reserved = true,
-  titleLines = 1,
+  onPress,
 }: ClassProps) {
   const buttonText = reserved ? "Reserved" : "Reserve";
   const bgColor = reserved ? "black" : "white";
   const textColor = reserved ? "white" : "black";
-
-  const isSingleLineTitle = titleLines === 1;
 
   return (
     <View style={styles.container}>
@@ -56,6 +55,7 @@ export default function ClassCard({
           text={buttonText}
           bgColor={bgColor}
           textColor={textColor}
+          onPress={onPress}
         />
       </View>
     </View>
@@ -109,6 +109,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 15,
     top: "50%",
-    marginTop: 15,
+    marginTop: 18,
   },
 });

@@ -5,6 +5,7 @@ type ButtonProps = {
   textColor: string;
   bgColor: string;
   width?: number;
+  onPress?: () => void;
 };
 
 export default function ReserveButton({
@@ -12,9 +13,11 @@ export default function ReserveButton({
   textColor,
   bgColor,
   width,
+  onPress,
 }: ButtonProps) {
   return (
     <Pressable
+      onPress={onPress}
       style={[
         styles.button,
         {
