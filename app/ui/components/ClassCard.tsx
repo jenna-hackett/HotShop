@@ -4,11 +4,13 @@ import ReserveButton from "./ReserveButton";
 
 type ClassProps = {
   time: string;
-  date: string;
+  date?: string;
   className: string;
   instructor: string;
   location: string;
   duration: string;
+  reserved?: boolean;
+  titleLines?: number;
 };
 
 export default function ClassCard({
@@ -18,22 +20,46 @@ export default function ClassCard({
   instructor,
   location,
   duration,
+  reserved = true,
+  titleLines = 1,
 }: ClassProps) {
+  const buttonText = reserved ? "Reserved" : "Reserve";
+  const bgColor = reserved ? "black" : "white";
+  const textColor = reserved ? "white" : "black";
+
+  const isSingleLineTitle = titleLines === 1;
+
   return (
     <View style={styles.container}>
       <View style={styles.timeAndIcon}>
-        <Text style={styles.bold}>{time}</Text>
+        <Text style={styles.bold} numberOfLines={1} ellipsizeMode="clip">
+          {time}
+        </Text>
         <Icon />
       </View>
       <View style={styles.info}>
-        <Text style={styles.bold}>{date}</Text>
-        <Text style={styles.bold}>{className}</Text>
+        {date ? <Text style={[styles.bold, styles.date]}>{date}</Text> : null}
+
+        <Text
+          style={[styles.bold, styles.title]}
+          numberOfLines={titleLines}
+          ellipsizeMode={isSingleLineTitle ? "clip" : "tail"}
+          adjustsFontSizeToFit={isSingleLineTitle}
+          minimumFontScale={0.9}
+          allowFontScaling
+        >
+          {className}
+        </Text>
         <Text style={styles.semibold}>{instructor}</Text>
         <Text style={styles.semibold}>{location}</Text>
         <Text style={styles.grey}>{duration}</Text>
       </View>
       <View style={styles.button}>
-        <ReserveButton text="Reserved" bgColor="black" textColor="white" />
+        <ReserveButton
+          text={buttonText}
+          bgColor={bgColor}
+          textColor={textColor}
+        />
       </View>
     </View>
   );
@@ -43,7 +69,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     backgroundColor: "#FFFFFF",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     alignItems: "flex-start",
     borderColor: "#EDEDED",
     borderWidth: 1,
@@ -51,12 +77,21 @@ const styles = StyleSheet.create({
   },
   timeAndIcon: {
     flexDirection: "column",
-    marginRight: 10,
+    marginRight: 16,
+    alignItems: "center",
+    width: 68,
+  },
+  date: {
+    marginBottom: 4,
   },
   bold: {
     fontSize: 15,
     fontWeight: "800",
     marginBottom: 4,
+  },
+  title: {
+    flexShrink: 1,
+    lineHeight: 20,
   },
   semibold: {
     fontWeight: "400",
@@ -69,8 +104,12 @@ const styles = StyleSheet.create({
   },
   info: {
     flexDirection: "column",
+    flex: 1,
+    marginRight: 12,
   },
   button: {
-    marginTop: 75,
+    alignSelf: "center",
+    marginLeft: "auto",
+    marginTop: 35,
   },
 });
